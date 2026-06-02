@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="/css/orderResponsive.css">
+    <link rel="stylesheet" href="/css/portal.css">
+    <title>Log ind</title>
+</head>
+<body>
+<header>
+    <nav>
+        <img src="/images/fog.png" alt="fog" id="logo">
+        <a href="./Order.html">Bestil</a>
+    </nav>
+</header>
+<div class="portal">
+    <div class="auth-card">
+        <h1>Log ind</h1>
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Adgangskode">
+        <button id="login-btn" class="picker-btn"><span>Log ind</span></button>
+        <p style="margin-top:12px;font-size:14px;">Ny kunde? <a href="#" id="toggle">Opret bruger</a></p>
+        <p id="login-status" style="color:#b4231f;font-size:14px;"></p>
+    </div>
+    <div class="auth-card hidden" id="signup">
+        <h1>Opret bruger</h1>
+        <input id="su-email" type="email" placeholder="Email">
+        <input id="su-password" type="password" placeholder="Adgangskode">
+        <input id="su-firstname" type="text" placeholder="Fornavn">
+        <input id="su-lastname" type="text" placeholder="Efternavn">
+        <input id="su-address" type="text" placeholder="Adresse">
+        <input id="su-postalcode" type="text" placeholder="Postnummer">
+        <input id="su-city" type="text" placeholder="By">
+        <input id="su-phone" type="text" placeholder="Telefon">
+        <button id="signup-btn" class="picker-btn"><span>Opret</span></button>
+        <p id="signup-status" style="font-size:14px;"></p>
+    </div>
+</div>
+<script src="/javascript/auth.js"></script>
+</body>
+</html>

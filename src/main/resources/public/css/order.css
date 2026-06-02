@@ -1,0 +1,364 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
+@font-face {
+    font-family: 'DinPro';
+    src: url('../assets/DinPro/dinpro.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'DinPro';
+    src: url('../assets/DinPro/dinpro_condensedblack.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'DinPro';
+    src: url('../assets/DinPro/dinpro_bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'DinPro';
+    src: url('../assets/DinPro/dinpro_condensedregular.otf') format('opentype');
+    font-weight: 50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: DinPro, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background: #f5f5f3;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: white;
+    position: fixed;
+}
+
+nav a {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+nav #logo {
+    width: auto;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav-links {
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.nav-links a {
+    position: static;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+}
+
+.text-div {
+    width: 580px;
+    height: auto;
+    position: fixed;
+    left: 50px;
+    top: 120px;
+}
+
+.text-div h1 {
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+
+.text-div p {
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.information {
+    width: 600px;
+    height: 600px;
+    background: #c8cdcf;
+    position: fixed;
+    top: 130px;
+    right: 50px;
+}
+
+.information .info-nav {
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.information .info-nav button {
+    border: none;
+    font-size: 20px;
+    background: #c8cdcf;
+    transition: ease 0.4s;
+    padding-bottom: 1px;
+}
+
+.information .info-nav button:hover {
+    cursor: pointer;
+    background: #256fbf;
+    color: white;
+    border-radius: 400px;
+}
+
+.information .info-nav .divider {
+    width: 2px;
+    height: 26px;
+    background: #003d76;
+    margin: 0 10px 0 10px;
+}
+
+.information .info-nav .not-active {
+    font-weight: bold;
+    color: #003d76;
+}
+
+.information .info-nav .not-active:hover {
+    color: white;
+}
+
+.information .info-nav .active-page {
+    padding: 0 10px 0 10px;
+    background: #003d76;
+    color: white;
+    font-weight: bold;
+    border-radius: 400px;
+}
+
+.information .page {
+    display: none;
+}
+
+.information .active {
+    display: block;
+    height: calc(100% - 36px);
+}
+
+.information .active .questions {
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.information .active .questions .hidden {
+    display: none;
+}
+
+.information .active .questions .visible {
+    display: block;
+}
+
+.information .active .questions form {
+    width: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.information .active .questions form h2 {
+    font-size: 24px;
+    margin-left: 10%;
+}
+
+.information .active .contact-info .contact-name,
+.information .active .contact-info .city-info {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.information .active .contact-info .message {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+.information .active .contact-info .message textarea {
+    vertical-align: top;
+    padding: 8px;
+    margin-left: 3%;
+    width: 300px;
+    height: 100px;
+    font-size: 16px;
+    border: 2px solid #dddddd;
+}
+
+.information .active .contact-info input {
+    width: 210px;
+    height: 30px;
+    margin-left: 10%;
+    padding-left: 8px;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 10px;
+    border: 2px solid #dddddd;
+}
+
+.information .active .contact-info #lname,
+.information .active .contact-info #city {
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.information .btns {
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.information .btns .picker-btn {
+    width: 90px;
+    height: 40px;
+    background: #c8cdcf;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: ease 0.4s;
+}
+
+.information .btns .picker-btn span:not(.picker-icon) {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    transition: ease 0.4s;
+}
+
+.information .btns .picker-btn .picker-icon {
+    font-size: 12px;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.information .btns .picker-btn:hover {
+    cursor: pointer;
+    text-underline-offset: 6px;
+}
+
+.information .btns .picker-btn:hover span:not(.picker-icon) {
+    text-decoration-color: #256fbf;
+    text-underline-offset: 6px;
+}
+
+select {
+    width: 80%;
+    height: auto;
+    border: 2px solid #dddddd;
+    background-color: #eeeeee;
+    margin: 10px 0 0 10%;
+    padding: 10px 36px 10px 10px;
+    transition: background-color 0.4s;
+    box-shadow: 0 2px 1px #003d76;
+    font-weight: 50;
+    font-size: 20px;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path d='M3 5l4 4 4-4' fill='none' stroke='%23999999' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+select:hover,
+select:focus {
+    background-color: #f5f5f3;
+    outline: none;
+}
+
+option {
+    background: #dddddd;
+    padding: 10px;
+    font-size: 18px;
+}
+
+option:first-of-type {
+    background: #003d76;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+option:nth-of-type(odd):not(:first-of-type) {
+    background: #ededed;
+    color: black;
+}
+
+.receipt {
+    background: #ffffff;
+    border: 1px solid #cfd4d6;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 0 40px 14px;
+    max-width: 520px;
+}
+
+.receipt-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.receipt-line {
+    border: none;
+    border-top: 1px solid #e2e2e2;
+    margin: 10px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 4px 0;
+    font-size: 15px;
+}
+
+.receipt-row span:first-child {
+    color: #555;
+}
+
+.receipt-row span:last-child {
+    font-weight: bold;
+    text-align: right;
+}

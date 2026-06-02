@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="/css/orderResponsive.css">
+    <title>Order</title>
+</head>
+<body>
+<header>
+    <nav>
+        <img src="/images/fog.png" alt="fog" id="logo">
+        <div class="nav-links" id="nav-links">
+            <a href="/Login.html" id="nav-login">Log ind</a>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="text-div">
+        <h1>Bestil Quick-Byg tilbud - carport med fladt tag</h1>
+        <p>
+            Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en
+            carport indenfor vores standardprogram.<br>
+            Tilbud og skitsetegning fremsendes på mail hurtigst muligt.<br>
+            Ved bestilling medfølger standardbyggevejledning.
+        </p>
+        <p>
+            Udfyld formularen omhyggeligt og klik på "Bestil tilbud".
+        </p>
+    </div>
+    <div class="information">
+        <div class="info-nav">
+            <button id="carport-btn" class="active-page">Carport</button>
+            <div class="divider"></div>
+            <button id="shed-btn">Redskabsrum</button>
+            <div class="divider"></div>
+            <button id="personal-btn">Kontaktoplysninger</button>
+            <div class="divider"></div>
+            <button id="done-btn" class="not-active">Afslut</button>
+        </div>
+        <div id="carport" class="page active">
+            <div class="questions">
+                <form action="">
+                    <div class="dropdowns">
+                        <label for="carport-roof"><h2>Carport med fladt tag</h2></label>
+                        <select id="carport-roof">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="rooftype">Vælg tagtype</option>
+                            <option value="without roof tiles">Uden tagplader</option>
+                            <option value="plastic trapezoidal plates">Plasttrapezplader</option>
+                        </select>
+                    </div>
+                    <div class="dropdowns">
+                        <label for="carport-width"><h2>Carport bredde</h2></label>
+                        <select id="carport-width">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="width">Carport bredde</option>
+                            <option value="240">240 cm</option>
+                            <option value="270">270 cm</option>
+                            <option value="300">300 cm</option>
+                            <option value="330">330 cm</option>
+                            <option value="360">360 cm</option>
+                            <option value="390">390 cm</option>
+                            <option value="420">420 cm</option>
+                            <option value="450">450 cm</option>
+                            <option value="480">480 cm</option>
+                            <option value="510">510 cm</option>
+                            <option value="540">540 cm</option>
+                            <option value="570">570 cm</option>
+                            <option value="600">600 cm</option>
+                        </select>
+                    </div>
+                    <div class="dropdowns">
+                        <label for="carport-length"><h2>Carport længde</h2></label>
+                        <select id="carport-length">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="length">Carport længde</option>
+                            <option value="240">240 cm</option>
+                            <option value="270">270 cm</option>
+                            <option value="300">300 cm</option>
+                            <option value="330">330 cm</option>
+                            <option value="360">360 cm</option>
+                            <option value="390">390 cm</option>
+                            <option value="420">420 cm</option>
+                            <option value="450">450 cm</option>
+                            <option value="480">480 cm</option>
+                            <option value="510">510 cm</option>
+                            <option value="540">540 cm</option>
+                            <option value="570">570 cm</option>
+                            <option value="600">600 cm</option>
+                            <option value="630">630 cm</option>
+                            <option value="660">660 cm</option>
+                            <option value="690">690 cm</option>
+                            <option value="720">720 cm</option>
+                            <option value="750">750 cm</option>
+                            <option value="780">780 cm</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="btns">
+
+                    <button id="carport-next" class="picker-btn" value="shed"><span>Næste</span><span
+                            class="picker-icon">▶</span></button>
+                </div>
+            </div>
+        </div>
+        <div id="shed" class="page">
+            <div class="questions">
+                <form action="">
+                    <div class="dropdowns">
+                        <label for="shed-choice"><h2>Skal du have et redskabsrum?</h2></label>
+                        <select id="shed-choice">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="answer">Vælg svar</option>
+                            <option value="yes">Ja tak, med redskabsrum</option>
+                            <option value="no">Nej tak, uden redskabsrum</option>
+                        </select>
+                    </div>
+                    <div class="dropdowns-h hidden">
+                        <label for="shed-width"><h2>Redskabsrum bredde</h2></label>
+                        <select id="shed-width">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="width">Redskabsrum bredde</option>
+                            <option value="210">210 cm</option>
+                            <option value="240">240 cm</option>
+                            <option value="270">270 cm</option>
+                            <option value="300">300 cm</option>
+                            <option value="330">330 cm</option>
+                            <option value="360">360 cm</option>
+                            <option value="390">390 cm</option>
+                            <option value="420">420 cm</option>
+                            <option value="450">450 cm</option>
+                            <option value="480">480 cm</option>
+                            <option value="510">510 cm</option>
+                            <option value="540">540 cm</option>
+                            <option value="570">570 cm</option>
+                            <option value="600">600 cm</option>
+                            <option value="630">630 cm</option>
+                            <option value="660">660 cm</option>
+                            <option value="690">690 cm</option>
+                            <option value="720">720 cm</option>
+                        </select>
+                    </div>
+                    <div class="dropdowns-h hidden">
+                        <label for="shed-length"><h2>Redskabsrum længde</h2></label>
+                        <select id="shed-length">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="length">Redskabsrum længde</option>
+                            <option value="150">150 cm</option>
+                            <option value="180">180 cm</option>
+                            <option value="210">210 cm</option>
+                            <option value="240">240 cm</option>
+                            <option value="270">270 cm</option>
+                            <option value="300">300 cm</option>
+                            <option value="330">330 cm</option>
+                            <option value="360">360 cm</option>
+                            <option value="390">390 cm</option>
+                            <option value="420">420 cm</option>
+                            <option value="450">450 cm</option>
+                            <option value="480">480 cm</option>
+                            <option value="510">510 cm</option>
+                            <option value="540">540 cm</option>
+                            <option value="570">570 cm</option>
+                            <option value="600">600 cm</option>
+                            <option value="630">630 cm</option>
+                            <option value="660">660 cm</option>
+                            <option value="690">690 cm</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="btns" id="btns">
+                    <button id="shed-previous" class="picker-btn" value="carport"><span
+                            class="picker-icon">◀</span><span>Forrige</span></button>
+                    <button id="shed-next" class="picker-btn" value="personal"><span>Næste</span><span
+                            class="picker-icon">▶</span></button>
+                </div>
+            </div>
+        </div>
+        <div id="personal" class="page">
+            <div class="questions contact-info">
+                <form action="">
+                    <h2>Kontaktoplysninger</h2>
+                    <div id="contact-login-prompt" style="margin: 0 10% 14px; display:none;">
+                        <span style="font-size:15px;">Har du en konto? </span>
+                        <a href="/Login.html" id="contact-login-btn" class="picker-btn"
+                           style="text-decoration:none;"><span>Log ind</span></a>
+                    </div>
+                    <p id="contact-loggedin-note" style="margin: 0 10% 14px; font-size:15px; color:#4a5d3a; display:none;">
+                        Du er logget ind — dine oplysninger er udfyldt automatisk.
+                    </p>
+                    <div class="contact-name">
+                        <label for="fname"></label>
+                        <input id="fname" type="text" placeholder="Fornavn">
+                        <label for="lname"></label>
+                        <input id="lname" type="text" placeholder="Efternavn">
+                    </div>
+                    <div class="address">
+                        <label for="address"></label>
+                        <input id="address" type="text" placeholder="Adresse">
+                    </div>
+                    <div class="city-info">
+                        <label for="postalcode"></label>
+                        <input id="postalcode" type="text" placeholder="Postnummer">
+                        <label for="city"></label>
+                        <input id="city" type="text" placeholder="By">
+                    </div>
+                    <div class="contact">
+                        <label for="email"></label>
+                        <input id="email" type="text" placeholder="Email">
+                    </div>
+                    <div class="contact">
+                        <label for="phone-number"></label>
+                        <input id="phone-number" type="text" placeholder="Telefon">
+                    </div>
+                    <div class="message">
+                        <label for="message">Evt. Bemærkninger:</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                </form>
+                <div class="btns">
+                    <button id="personal-previous" class="picker-btn" value="shed"><span
+                            class="picker-icon">◀</span><span>Forrige</span></button>
+                    <button id="personal-next" class="picker-btn" value="end"><span>Næste</span><span
+                            class="picker-icon">▶</span></button>
+                </div>
+            </div>
+        </div>
+        <div id="done" class="page">
+            <div class="questions">
+                <h2 style="max-width:520px;margin-left:40px;margin-bottom:10px;">Gennemse din forespørgsel</h2>
+                <div id="done-summary"></div>
+                <p id="login-hint" style="font-size:14px;color:#555;max-width:520px;margin:0 auto 8px;"></p>
+                <div class="btns">
+                    <button id="done-previous" class="picker-btn" value="personal"><span class="picker-icon">◀</span><span>Forrige</span></button>
+                    <button id="send-request" class="picker-btn"><span>Bestil tilbud</span><span class="picker-icon">▶</span></button>
+                </div>
+                <p id="request-status" style="margin-top:12px;font-size:14px;"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascript/orderPage.js"></script>
+<script src="/javascript/orderShed.js"></script>
+<script src="/javascript/orderPageButtons.js"></script>
+<script src="/javascript/saveOrder.js"></script>
+<script src="/javascript/pageLoadsData.js"></script>
+<script src="/javascript/refreshPageLocalStorage.js"></script>
+<script src="/javascript/validation.js"></script>
+<script src="/javascript/requestFlow.js"></script>
+</body>
+</html>

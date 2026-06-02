@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="/css/orderResponsive.css">
+    <link rel="stylesheet" href="/css/portal.css">
+    <title>Mine ordrer</title>
+</head>
+<body>
+<header>
+    <nav>
+        <img src="/images/fog.png" alt="fog" id="logo">
+        <div class="nav-links">
+            <a href="/Order.html">Ny bestilling</a>
+            <a href="#" id="logout">Log ud</a>
+        </div>
+    </nav>
+</header>
+<div class="portal">
+    <h1>Mine oplysninger</h1>
+    <div class="order-card" id="profile-card" style="max-width:760px;">
+        <div class="profile-grid">
+            <label>Fornavn<input type="text" id="p-firstname"></label>
+            <label>Efternavn<input type="text" id="p-lastname"></label>
+            <label class="full">Adresse<input type="text" id="p-address"></label>
+            <label>Postnummer<input type="text" id="p-postalcode"></label>
+            <label>By<input type="text" id="p-city"></label>
+            <label class="full">Email<input type="email" id="p-email"></label>
+            <label class="full">Adgangskode
+                <div class="pw-row">
+                    <input type="password" id="p-password" value="********" disabled>
+                    <button type="button" id="change-pw" class="picker-btn"><span>Skift adgangskode</span></button>
+                </div>
+            </label>
+            <label class="full">Telefon<input type="text" id="p-phone"></label>
+        </div>
+        <div class="btns" style="justify-content:flex-start;">
+            <button id="save-profile" class="picker-btn"><span>Gem oplysninger</span></button>
+        </div>
+        <p id="profile-status" style="font-size:14px;color:#4a5d3a;"></p>
+    </div>
+
+    <div id="pw-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h2 style="margin-bottom:14px;">Skift adgangskode</h2>
+            <label class="full">Nuværende adgangskode<input type="password" id="pw-current"></label>
+            <label class="full">Ny adgangskode<input type="password" id="pw-new"></label>
+            <label class="full">Gentag ny adgangskode<input type="password" id="pw-repeat"></label>
+            <p id="pw-status" style="font-size:14px;color:#b4231f;min-height:18px;"></p>
+            <div class="btns" style="justify-content:flex-end;gap:10px;">
+                <button id="pw-cancel" class="picker-btn" style="background:#8a8270;"><span>Annullér</span></button>
+                <button id="pw-save" class="picker-btn"><span>Gem ny adgangskode</span></button>
+            </div>
+        </div>
+    </div>
+
+    <h1>Mine ordrer</h1>
+
+    <p id="orders-empty" class="hidden">Du har ingen ordrer endnu.</p>
+    <p id="orders-login" class="hidden">Log ind for at se dine ordrer. <a href="/Login.html">Log ind</a>.</p>
+    <p id="orders-error" class="hidden" style="color:#b4231f;"></p>
+
+    <div id="orders"></div>
+</div>
+
+<template id="order-card-template">
+    <div class="order-card">
+        <div class="row">
+            <strong class="oc-id"></strong>
+            <span class="badge oc-status"></span>
+        </div>
+        <p class="oc-dims"></p>
+        <p class="oc-note hidden" style="color:#555;"></p>
+        <p class="oc-price"></p>
+
+        <canvas class="oc-sketch hidden" width="420" height="300"
+                style="border:1px solid #ddd;border-radius:6px;margin-top:10px;max-width:100%;"></canvas>
+        <p class="oc-sketch-pending hidden" style="color:#777;font-size:14px;margin-top:8px;">
+            En medarbejder ser på din forespørgsel og kontakter dig.
+        </p>
+
+        <div class="btns">
+            <button class="picker-btn oc-pay hidden"></button>
+            <button class="picker-btn oc-bom hidden"><span>Se stykliste</span></button>
+            <button class="picker-btn oc-pdf hidden"><span>Download PDF</span></button>
+        </div>
+        <div class="bom-target"></div>
+    </div>
+</template>
+
+<template id="bom-table-template">
+    <table class="bom-table">
+        <thead>
+            <tr><th>Materiale</th><th class="num">Antal</th><th class="num">Pris</th></tr>
+        </thead>
+        <tbody class="bom-body"></tbody>
+        <tfoot>
+            <tr><td>Total</td><td></td><td class="num bom-total"></td></tr>
+        </tfoot>
+    </table>
+</template>
+<template id="bom-row-template">
+    <tr><td class="bl-desc"></td><td class="num bl-qty"></td><td class="num bl-price"></td></tr>
+</template>
+
+<script src="/javascript/validation.js"></script>
+<script src="/javascript/myOrders.js"></script>
+</body>
+</html>

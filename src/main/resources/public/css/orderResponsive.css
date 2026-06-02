@@ -1,0 +1,73 @@
+@media (max-width: 1300px) {
+    nav {
+        z-index: 999;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .text-div {
+        position: relative;
+        left: 0;
+    }
+
+    .container .information {
+        position: relative;
+        right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-div {
+        width: 360px;
+        height: auto;
+    }
+
+    .information {
+        width: 400px;
+        height: 600px;
+    }
+
+    .information .info-nav {
+        flex-wrap: wrap;
+    }
+
+    .information .info-nav button {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .information .info-nav .divider:nth-child(6) {
+        visibility: hidden;
+    }
+
+    .information .info-nav #done {
+        margin-bottom: 0;
+    }
+
+    .information .active .questions {
+        height: 90%;
+    }
+
+    .information .active .questions form h2 {
+        font-size: 20px;
+        margin-left: 10%;
+    }
+
+    .information .active .contact-info .message {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .information .active .contact-info .message textarea {
+        width: 280px;
+    }
+
+    .information .active .contact-info input {
+        width: 140px;
+    }
+}

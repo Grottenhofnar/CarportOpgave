@@ -1,0 +1,449 @@
+
+.portal,
+.portal *,
+nav,
+nav * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.portal .hidden,
+.auth-card.hidden,
+.portal .picker-btn.hidden {
+    display: none !important;
+}
+
+.order-card .picker-btn:empty {
+    display: none !important;
+}
+
+.portal input,
+.portal select,
+.portal button,
+.auth-card input {
+    box-sizing: border-box;
+}
+
+.nav-links {
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.nav-links a {
+    position: static;
+    right: auto;
+    top: auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.portal {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 110px 20px 40px;
+}
+
+.portal h1 {
+    margin-bottom: 14px;
+    line-height: 1.4;
+    padding-bottom: 2px;
+}
+
+.portal h2 {
+    line-height: 1.4;
+    padding-bottom: 2px;
+}
+
+.portal p,
+.portal span,
+.portal label,
+.portal a {
+    line-height: 1.6;
+}
+
+.auth-card {
+    max-width: 420px;
+    margin: 0 auto 24px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    line-height: 1.6;
+}
+
+.auth-card h1 {
+    margin-bottom: 18px;
+    line-height: 1.4;
+    padding-bottom: 2px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 1.5;
+    height: auto;
+}
+
+.order-card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.order-card .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: bold;
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 11px;
+}
+
+.badge.REQUESTED { background: #8a8270; }
+.badge.IN_PROGRESS { background: #c98a2b; }
+.badge.QUOTED { background: #256fbf; }
+.badge.PAID { background: #4a5d3a; }
+.badge.COMPLETED { background: #222; }
+
+.bom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.bom-table th,
+.bom-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.bom-table th {
+    background: #222;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.bom-table .num {
+    text-align: right;
+}
+
+.bom-table tfoot td {
+    border-top: 2px solid #222;
+    font-weight: bold;
+}
+
+.admin-grid {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+}
+
+.admin-list {
+    flex: 0 0 280px;
+}
+
+.admin-detail {
+    flex: 1;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    padding: 11px 13px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+}
+
+.list-item:hover {
+    border-color: #256fbf;
+}
+
+.fields-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.fields-row label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.6;
+}
+
+.fields-row select,
+.fields-row input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    line-height: 1.5;
+    height: auto;
+    width: 150px;
+    min-width: 150px;
+    margin: 0;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.fields-row select {
+    padding-right: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path d='M3 5l4 4 4-4' fill='none' stroke='%23666666' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.fields-row .shed-toggle {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.fields-row .shed-toggle input {
+    width: 20px;
+    height: 20px;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: none;
+    background-image: none;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+    cursor: pointer;
+}
+
+.portal .picker-btn,
+.auth-card .picker-btn,
+.order-card .picker-btn,
+.admin-detail .picker-btn {
+    width: auto;
+    min-width: 120px;
+    height: auto;
+    padding: 12px 22px;
+    line-height: 1.5;
+    background: #256fbf;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.portal .picker-btn span,
+.auth-card .picker-btn span,
+.order-card .picker-btn span,
+.admin-detail .picker-btn span {
+    text-decoration: none;
+    color: #fff;
+}
+
+.portal .picker-btn:hover,
+.auth-card .picker-btn:hover,
+.order-card .picker-btn:hover,
+.admin-detail .picker-btn:hover {
+    background: #1c5598;
+}
+
+.auth-card .picker-btn {
+    width: 100%;
+}
+
+@media (max-width: 780px) {
+    .admin-grid {
+        flex-direction: column;
+    }
+
+    .admin-list {
+        flex: none;
+        width: 100%;
+    }
+}
+
+.admin-sec {
+    margin-top: 18px;
+}
+
+#admin-nav {
+    margin: 18px 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+#admin-nav .divider {
+    display: none;
+}
+
+#admin-nav button {
+    background: #eef1f4;
+    color: #16140f;
+    border: 1px solid #d6dbe0;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+}
+
+#admin-nav button:hover {
+    background: #dde4ec;
+    color: #16140f;
+    border-radius: 999px;
+}
+
+#admin-nav button.active-page {
+    background: #256fbf;
+    color: #fff;
+    border-color: #256fbf;
+}
+
+.receipt {
+    border: 1px solid #ddd;
+}
+
+.receipt .receipt-head {
+    overflow: hidden;
+}
+
+.receipt hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.profile-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.profile-grid label.full {
+    grid-column: 1 / -1;
+}
+
+.profile-grid input {
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.profile-grid input:disabled {
+    background: #f0f0f0;
+    color: #777;
+}
+
+.pw-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pw-row input {
+    flex: 1;
+}
+
+.pw-row .picker-btn {
+    white-space: nowrap;
+}
+#save-profile {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .profile-grid { grid-template-columns: 1fr; }
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 26px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+}
+
+.modal-box label.full {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.modal-box input {
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="/css/orderResponsive.css">
+    <link rel="stylesheet" href="/css/portal.css">
+    <title>Admin</title>
+</head>
+<body>
+<header>
+    <nav>
+        <img src="/images/fog.png" alt="fog" id="logo">
+        <a href="#" id="logout">Log ud</a>
+    </nav>
+</header>
+<div class="portal">
+    <h1>Forespørgsler</h1>
+    <div class="admin-grid">
+        <aside class="admin-list">
+            <p id="list-empty" class="hidden">Ingen forespørgsler.</p>
+            <p id="list-login" class="hidden">Kun for admin. <a href="/Login.html">Log ind</a>.</p>
+            <div id="order-list"></div>
+        </aside>
+
+        <main class="admin-detail" id="detail">
+            <p id="detail-placeholder">Vælg en forespørgsel til venstre.</p>
+
+            <div id="detail-content" class="hidden">
+                <h2 id="d-title"></h2>
+
+                <div class="order-card" style="background:#f3f6fb;">
+                    <strong>Kontakt</strong><br>
+                    <span id="d-contact-name"></span><br>
+                    <span id="d-contact-phone"></span>
+                    <span id="d-contact-email"></span>
+                    <span id="d-contact-address"></span>
+                    <span id="d-contact-message"></span>
+                    <span id="d-account" style="color:#777;"></span>
+                </div>
+
+                <div class="info-nav" id="admin-nav">
+                    <button class="not-active active-page" data-sec="maal">Mål</button>
+                    <div class="divider"></div>
+                    <button class="not-active" data-sec="tegning">Tegning</button>
+                    <div class="divider"></div>
+                    <button class="not-active" data-sec="stykliste">Stykliste</button>
+                    <div class="divider"></div>
+                    <button class="not-active" data-sec="pris">Pris</button>
+                    <div class="divider"></div>
+                    <button class="not-active" data-sec="kvittering">Kvittering</button>
+                </div>
+
+                <section class="admin-sec" id="sec-maal">
+                    <div class="fields-row">
+                        <label>Bredde <select id="f-width"></select></label>
+                        <label>Længde <select id="f-length"></select></label>
+                        <label>Skurbredde <select id="f-sw"></select></label>
+                        <label>Skurlængde <select id="f-sl"></select></label>
+                        <label class="shed-toggle">Skur <input type="checkbox" id="f-shed"></label>
+                    </div>
+                </section>
+
+                <section class="admin-sec hidden" id="sec-tegning">
+                    <canvas id="ac" width="460" height="300"
+                            style="border:1px solid #eee;border-radius:6px;margin:12px 0;max-width:100%;"></canvas>
+                </section>
+
+                <section class="admin-sec hidden" id="sec-stykliste">
+                    <h2 style="margin-top:10px;">Stykliste (kostpris) — <span id="total"></span></h2>
+                    <table class="bom-table">
+                        <thead>
+                            <tr><th>Materiale</th><th class="num">Længde</th><th class="num">Antal</th><th class="num">Kostpris</th></tr>
+                        </thead>
+                        <tbody id="bom-body"></tbody>
+                    </table>
+                </section>
+
+                <section class="admin-sec hidden" id="sec-pris">
+                    <div class="order-card" style="margin-top:16px; max-width:420px;">
+                        <strong>Prissætning</strong>
+                        <div class="fields-row" style="flex-direction:column; gap:10px; margin-top:10px;">
+                            <label>Kostpris i alt
+                                <input type="text" id="p-cost" readonly style="background:#f0f0f0;"></label>
+                            <label>Salgspris til kunde (kr)
+                                <input type="text" id="p-sale" inputmode="numeric"></label>
+                        </div>
+                        <p style="margin-top:10px;">Salgspris: <strong id="p-profit">—</strong>
+                            (<span id="p-margin">—</span>)</p>
+                    </div>
+                </section>
+
+                <section class="admin-sec hidden" id="sec-kvittering">
+                    <div class="order-card receipt" id="receipt" style="max-width:520px;">
+                        <div class="receipt-head">
+                            <strong style="font-size:20px;">Fog · Carport</strong>
+                            <span id="r-orderno" style="float:right;color:#777;"></span>
+                        </div>
+                        <hr>
+                        <p id="r-customer"></p>
+                        <p id="r-spec"></p>
+                        <table class="bom-table" style="margin-top:8px;">
+                            <tbody>
+                                <tr><td>Carport (materialer + montering)</td><td class="num" id="r-base"></td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Total at betale</td><td class="num" id="r-total"></td></tr>
+                            </tfoot>
+                        </table>
+                        <label style="display:block;font-size:13px;margin-top:14px;">Besked til kunde<br>
+                            <input id="f-note" type="text" style="width:100%;padding:9px;"></label>
+                        <div class="btns" style="justify-content:flex-start;margin-top:14px;">
+                            <button id="send" class="picker-btn"><span>Send tilbud + tegning til kunde</span></button>
+                        </div>
+                        <p id="a-status" style="font-size:14px;color:#4a5d3a;"></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<template id="list-item-template">
+    <button class="list-item">
+        <span class="li-label"></span>
+        <span class="badge li-status"></span>
+    </button>
+</template>
+<template id="bom-row-template">
+    <tr><td class="bl-desc"></td><td class="num bl-length"></td><td class="num bl-qty"></td><td class="num bl-price"></td></tr>
+</template>
+
+<script src="/javascript/admin.js"></script>
+</body>
+</html>
